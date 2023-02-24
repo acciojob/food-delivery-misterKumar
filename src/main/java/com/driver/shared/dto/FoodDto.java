@@ -10,6 +10,10 @@ public class FoodDto{
 	private String foodCategory;
 	private float foodPrice;
 
+	public FoodDto(){
+
+	}
+
 	public long getId() {
 		return id;
 	}
