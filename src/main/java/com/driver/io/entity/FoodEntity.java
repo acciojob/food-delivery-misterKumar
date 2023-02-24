@@ -1,24 +1,22 @@
 package com.driver.io.entity;
 
-import java.io.Serializable;
-
 import javax.persistence.*;
 
 @Entity(name = "foods")
-public class FoodEntity{
+public class FoodEntity {
 	@Id
 	@GeneratedValue
 	private long id;
-	
+
 	@Column(nullable = false)
 	private String foodId;
-	
+
 	@Column(nullable = false)
 	private String foodName;
-	
+
 	@Column(nullable = false)
 	private float foodPrice;
-	
+
 	@Column(nullable = false)
 	private String foodCategory;
 

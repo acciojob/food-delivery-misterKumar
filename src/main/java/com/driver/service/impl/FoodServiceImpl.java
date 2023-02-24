@@ -91,6 +91,9 @@ public class FoodServiceImpl implements FoodService{
 
     }
 
+    //===============================================
+    //CONVERTOR (Here below we are having some functions which will do conversions)
+    //===============================================
 
     public FoodDetailsResponse createFood(FoodDetailsRequestModel foodDetails){
         FoodDto foodDto = new FoodDto();
@@ -100,7 +103,9 @@ public class FoodServiceImpl implements FoodService{
 
         FoodDto finalFoodDto = createFood(foodDto);
 
-
+        //---------------------------------
+        //Converting finalFoodDto into FoodDetailsResponse
+        //---------------------------------
 
         FoodDetailsResponse foodDetailsResponse = new FoodDetailsResponse();
         foodDetailsResponse.setFoodName(finalFoodDto.getFoodName());
@@ -131,6 +136,9 @@ public class FoodServiceImpl implements FoodService{
 
         FoodDto finalFoodDto = updateFoodDetails(id,foodDto);
 
+        //--------------------------------
+        //Converting finalOrderDto into OrderDetailsResponse
+        //--------------------------------
 
         FoodDetailsResponse foodDetailsResponse = new FoodDetailsResponse();
         foodDetailsResponse.setFoodName(finalFoodDto.getFoodName());

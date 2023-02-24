@@ -16,42 +16,33 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.validation.constraints.Null;
-
 @RestController
 @RequestMapping("/orders")
 public class OrderController {
-
 	@Autowired
 	OrderServiceImpl orderServiceImpl;
-
 	@GetMapping(path="/{id}")
 	public OrderDetailsResponse getOrder(@PathVariable String id) throws Exception{
-
 		return orderServiceImpl.getOrder(id);
 	}
-	
+
 	@PostMapping()
-	public OrderDetailsResponse createOrder(@RequestBody OrderDetailsRequestModel order) throws NullPointerException {
-		
+	public OrderDetailsResponse createOrder(@RequestBody OrderDetailsRequestModel order) {
 		return orderServiceImpl.createOrder(order);
 	}
-		
+
 	@PutMapping(path="/{id}")
 	public OrderDetailsResponse updateOrder(@PathVariable String id, @RequestBody OrderDetailsRequestModel order) throws Exception{
-		
 		return orderServiceImpl.updateOrder(id,order);
 	}
-	
+
 	@DeleteMapping(path = "/{id}")
-	public OperationStatusModel deleteOrder(@PathVariable String id) throws NullPointerException {
-		
+	public OperationStatusModel deleteOrder(@PathVariable String id) throws Exception {
 		return orderServiceImpl.delete_Order(id);
 	}
-	
+
 	@GetMapping()
-	public List<OrderDetailsResponse> getOrders() throws NullPointerException {
-		
+	public List<OrderDetailsResponse> getOrders() {
 		return orderServiceImpl.get_Orders();
 	}
 }

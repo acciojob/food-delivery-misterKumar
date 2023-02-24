@@ -1,6 +1,5 @@
 package com.driver.io.entity;
 
-import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.*;
@@ -23,7 +22,7 @@ public class OrderEntity {
 
 	@Column(nullable = false)
 	private String userId;
-	
+
 	@Column(nullable = false)
 	private boolean status;
 
@@ -31,7 +30,7 @@ public class OrderEntity {
 	@JoinColumn
 	UserEntity userEntity;
 
-	@OneToMany(mappedBy = "orderEntity",cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "orderEntity", cascade = CascadeType.ALL)
 	List<FoodEntity> foodEntityList;
 
 	public long getId() {

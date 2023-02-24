@@ -88,6 +88,9 @@ public class OrderServiceImpl implements OrderService {
         return orderDtoList;
     }
 
+    //===============================================
+    //CONVERTOR (Here below we are having some functions which will do conversions)
+    //===============================================
 
     public OrderDetailsResponse createOrder(OrderDetailsRequestModel order){
 
@@ -98,6 +101,9 @@ public class OrderServiceImpl implements OrderService {
 
         OrderDto finalOrderDto = createOrder(orderDto);
 
+        //---------------------------------
+        //Converting finalOrderDto into OrderDetailsResponse
+        //---------------------------------
 
         OrderDetailsResponse orderDetailsResponse = new OrderDetailsResponse();
         orderDetailsResponse.setOrderId(finalOrderDto.getOrderId());
@@ -125,7 +131,9 @@ public class OrderServiceImpl implements OrderService {
 
     public OrderDetailsResponse updateOrder(String id, OrderDetailsRequestModel order) throws Exception {
 
-
+        //---------------------------
+        //We will convert 'order' (OrderDetailsRequestModel) into orderDto here
+        //---------------------------
 
         OrderDto orderDto = new OrderDto();
         orderDto.setUserId(order.getUserId());
@@ -134,7 +142,9 @@ public class OrderServiceImpl implements OrderService {
 
         OrderDto finalOrderDto = updateOrderDetails(id,orderDto);
 
-
+        //---------------------------
+        //We will convert this finalOrderDto into OrderDetailsResponse
+        //---------------------------
 
         OrderDetailsResponse orderDetailsResponse = new OrderDetailsResponse();
         orderDetailsResponse.setOrderId(finalOrderDto.getOrderId());

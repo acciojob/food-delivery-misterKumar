@@ -108,8 +108,13 @@ public class UserServiceImpl implements UserService {
         return userDtoList;
     }
 
+    //===============================================
+    //CONVERTOR (Here below we are having some functions which will do conversions)
+    //===============================================
     public UserResponse createUser(UserDetailsRequestModel userDetails) throws Exception {
-
+        //---------------------------------
+        //Let's convert this received 'userDetails' into UserDto
+        //---------------------------------
 
         UserDto userDto = new UserDto();
         userDto.setFirstName(userDetails.getFirstName());
@@ -117,10 +122,11 @@ public class UserServiceImpl implements UserService {
         userDto.setEmail(userDetails.getEmail());
 
 
-
+        //---------------------------------
         UserDto finalUserDto = createUser(userDto);
 
-
+        //===============================================
+        /*Now we will convert this finalUserDto into userResponse and return it*/
 
         UserResponse userResponse = new UserResponse();
         userResponse.setUserId(finalUserDto.getUserId());
@@ -140,7 +146,9 @@ public class UserServiceImpl implements UserService {
             userDto = getUserByUserId(id);
         }
 
-
+        //------------------------------
+        //Now we will convert this above userDto into userResponse
+        //------------------------------
 
         UserResponse userResponse = new UserResponse();
         userResponse.setUserId(userDto.getUserId());
@@ -152,7 +160,9 @@ public class UserServiceImpl implements UserService {
     }
 
     public UserResponse updateUser(String id, UserDetailsRequestModel userDetails) throws Exception {
-
+        //--------------------
+        //Now we will convert 'userDetails' into 'UserDto'
+        //--------------------
 
         UserDto userDto = new UserDto();
         userDto.setFirstName(userDetails.getFirstName());

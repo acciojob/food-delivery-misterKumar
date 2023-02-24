@@ -8,7 +8,7 @@ public class UserDto{
 	private String lastName;
 	private String email;
 
-	public UserDto(){
+	public UserDto() {
 
 	}
 
