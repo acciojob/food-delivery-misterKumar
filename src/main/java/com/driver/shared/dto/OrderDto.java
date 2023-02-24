@@ -11,9 +11,7 @@ public class OrderDto{
 	private String userId;
 	private boolean status;
 
-	public OrderDto(){
 
-	}
 	public long getId() {
 		return id;
 	}
