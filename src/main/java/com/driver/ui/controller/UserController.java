@@ -47,7 +47,7 @@ public class UserController {
 	}
 	
 	@GetMapping()
-	public List<UserResponse> getUsers(){
+	public List<UserResponse> getUsers() throws Exception{
 
 		return userServiceImpl.get_Users();
 	}

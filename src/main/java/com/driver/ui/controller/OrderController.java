@@ -30,7 +30,7 @@ public class OrderController {
 	}
 	
 	@PostMapping()
-	public OrderDetailsResponse createOrder(@RequestBody OrderDetailsRequestModel order) {
+	public OrderDetailsResponse createOrder(@RequestBody OrderDetailsRequestModel order) throws Exception {
 		
 		return orderServiceImpl.createOrder(order);
 	}
@@ -48,7 +48,7 @@ public class OrderController {
 	}
 	
 	@GetMapping()
-	public List<OrderDetailsResponse> getOrders() {
+	public List<OrderDetailsResponse> getOrders() throws Exception{
 		
 		return orderServiceImpl.get_Orders();
 	}

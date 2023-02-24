@@ -30,7 +30,7 @@ public class FoodController {
 	}
 
 	@PostMapping("/create")
-	public FoodDetailsResponse createFood(@RequestBody FoodDetailsRequestModel foodDetails) {
+	public FoodDetailsResponse createFood(@RequestBody FoodDetailsRequestModel foodDetails) throws Exception {
 
 		return foodServiceImpl.createFood(foodDetails);
 	}
@@ -48,7 +48,7 @@ public class FoodController {
 	}
 	
 	@GetMapping()
-	public List<FoodDetailsResponse> getFoods() {
+	public List<FoodDetailsResponse> getFoods() throws Exception {
 
 		return foodServiceImpl.get_Foods();
 	}
