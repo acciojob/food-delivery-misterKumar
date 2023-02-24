@@ -47,7 +47,7 @@ public class UserController {
 	}
 	
 	@GetMapping()
-	public List<UserResponse> getUsers() throws Exception{
+	public List<UserResponse> getUsers() throws NullPointerException{
 
 		return userServiceImpl.get_Users();
 	}

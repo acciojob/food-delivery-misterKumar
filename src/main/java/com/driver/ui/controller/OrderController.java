@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.constraints.Null;
+
 @RestController
 @RequestMapping("/orders")
 public class OrderController {
@@ -30,7 +32,7 @@ public class OrderController {
 	}
 	
 	@PostMapping()
-	public OrderDetailsResponse createOrder(@RequestBody OrderDetailsRequestModel order) throws Exception {
+	public OrderDetailsResponse createOrder(@RequestBody OrderDetailsRequestModel order) throws NullPointerException {
 		
 		return orderServiceImpl.createOrder(order);
 	}
@@ -42,13 +44,13 @@ public class OrderController {
 	}
 	
 	@DeleteMapping(path = "/{id}")
-	public OperationStatusModel deleteOrder(@PathVariable String id) throws Exception {
+	public OperationStatusModel deleteOrder(@PathVariable String id) throws NullPointerException {
 		
 		return orderServiceImpl.delete_Order(id);
 	}
 	
 	@GetMapping()
-	public List<OrderDetailsResponse> getOrders() throws Exception{
+	public List<OrderDetailsResponse> getOrders() throws NullPointerException {
 		
 		return orderServiceImpl.get_Orders();
 	}

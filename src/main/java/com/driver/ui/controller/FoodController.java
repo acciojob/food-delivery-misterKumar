@@ -30,7 +30,7 @@ public class FoodController {
 	}
 
 	@PostMapping("/create")
-	public FoodDetailsResponse createFood(@RequestBody FoodDetailsRequestModel foodDetails) throws Exception {
+	public FoodDetailsResponse createFood(@RequestBody FoodDetailsRequestModel foodDetails) throws NullPointerException {
 
 		return foodServiceImpl.createFood(foodDetails);
 	}
@@ -48,7 +48,7 @@ public class FoodController {
 	}
 	
 	@GetMapping()
-	public List<FoodDetailsResponse> getFoods() throws Exception {
+	public List<FoodDetailsResponse> getFoods() throws NullPointerException {
 
 		return foodServiceImpl.get_Foods();
 	}
