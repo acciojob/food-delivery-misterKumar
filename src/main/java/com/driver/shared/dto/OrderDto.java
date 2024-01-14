@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 public class OrderDto{
 
+
 	private long id;
 	private String orderId;
 	private float cost;

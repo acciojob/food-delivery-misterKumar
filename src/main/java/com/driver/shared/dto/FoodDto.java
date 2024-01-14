@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 public class FoodDto{
 
+
 	private long id;
 	private String foodId;
 	private String foodName;

@@ -1,7 +1,6 @@
 package com.driver.io.repository;
 
-
-import com.driver.io.entity.UserEntity;
+import com.driver.model.entity.UserEntity;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Repository;
 
@@ -11,4 +10,3 @@ public interface UserRepository extends PagingAndSortingRepository<UserEntity, L
 	UserEntity findByUserId(String userId);
 
 }
-

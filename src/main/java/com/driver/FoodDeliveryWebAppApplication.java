@@ -10,4 +10,5 @@ public class FoodDeliveryWebAppApplication extends SpringBootServletInitializer{
 		SpringApplication.run(FoodDeliveryWebAppApplication.class, args);
 	}
 
+
 }

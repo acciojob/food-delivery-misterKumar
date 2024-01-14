@@ -2,6 +2,7 @@ package com.driver.model.request;
 
 public class UserDetailsRequestModel {
 
+
 	private String firstName;
 	private String lastName;
 	private String email;

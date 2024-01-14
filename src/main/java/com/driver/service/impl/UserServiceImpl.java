@@ -1,9 +1,7 @@
 package com.driver.service.impl;
 import java.util.UUID;
-
-import com.driver.io.entity.UserEntity;
 import com.driver.io.repository.UserRepository;
-
+import com.driver.model.entity.UserEntity;
 import com.driver.model.request.UserDetailsRequestModel;
 import com.driver.model.response.OperationStatusModel;
 import com.driver.model.response.RequestOperationName;

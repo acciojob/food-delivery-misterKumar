@@ -2,6 +2,7 @@ package com.driver.model.request;
 
 public class OrderDetailsRequestModel {
 
+
 	private String[] items;
 	private float cost;
 	private String userId;
